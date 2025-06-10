@@ -1,4 +1,4 @@
-VERSION='1.5.7'
+VERSION='1.5.8'
 TITLE='BiZ9-React-Remote'
 REPO='git@github.com:biz9framework/biz9-react-remote.git'
 BRANCH='main'

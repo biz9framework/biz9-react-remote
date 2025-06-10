@@ -1,5 +1,4 @@
 import axios  from 'axios';
-
 const get_data_adapter = (url) => {
     return new Promise((callback) => {
         axios.get(url)
@@ -13,7 +12,6 @@ const get_data_adapter = (url) => {
             });
     })
 }
-
 const post_data_adapter = (url,obj) => {
     return new Promise((callback) => {
         axios.post(url,{data:obj}).then(function (response) {
@@ -27,7 +25,6 @@ const post_data_adapter = (url,obj) => {
 
     });
 }
-
 const delete_data_adapter = (url) => {
     return new Promise((callback) => {
         axios.delete(url).then(function (response) {
@@ -41,7 +38,6 @@ const delete_data_adapter = (url) => {
 
     });
 }
-
 export {
     get_data_adapter,
     delete_data_adapter,

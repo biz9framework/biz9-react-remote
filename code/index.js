@@ -1,5 +1,4 @@
 import { get_data_adapter,post_data_adapter,delete_data_adapter }  from './adapter.js';
-
 class Remote {
     static get = async (url) => {
         const [error,data] = await get_data_adapter(url);
@@ -14,7 +13,6 @@ class Remote {
         return [error,data];
     };
 }
-
 export {
     Remote
 }
