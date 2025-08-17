@@ -8,7 +8,7 @@ const get_data_adapter = (url) => {
             .catch(function (error) {
                 console.log('Apdater-Get-Data-Error');
                 console.log(error);
-                callback(error);
+                callback([error,null]);
             });
     })
 }
@@ -20,7 +20,7 @@ const post_data_adapter = (url,obj) => {
             .catch(function (error) {
                 console.log('Apdater-Post-Data-Error');
                 console.log(error);
-                callback(error);
+                callback([error,null]);
             })
 
     });
@@ -33,9 +33,8 @@ const delete_data_adapter = (url) => {
             .catch(function (error) {
                 console.log('Apdater-Delete-Data-Error');
                 console.log(error);
-                callback(error);
+                callback([error,null]);
             })
-
     });
 }
 export {
