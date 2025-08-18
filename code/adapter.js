@@ -1,7 +1,8 @@
 import axios  from 'axios';
+axios.defaults.withCredentials = true;
 const get_data_adapter = (url) => {
     return new Promise((callback) => {
-        axios.get(url,{withCredentials:true})
+        axios.get(url)
             .then(function (response) {
                 callback([response.data.cloud_error,response.data.cloud]);
             })
@@ -14,7 +15,7 @@ const get_data_adapter = (url) => {
 }
 const post_data_adapter = (url,obj) => {
     return new Promise((callback) => {
-        axios.post(url,{data:obj,withCredentials:true}).then(function (response) {
+        axios.post(url,{data:obj}).then(function (response) {
             callback([response.data.cloud_error,response.data.cloud]);
         })
             .catch(function (error) {
@@ -27,7 +28,7 @@ const post_data_adapter = (url,obj) => {
 }
 const delete_data_adapter = (url) => {
     return new Promise((callback) => {
-        axios.delete(url,{withCredentials:true}).then(function (response) {
+        axios.delete(url).then(function (response) {
             callback([response.data.cloud_error,response.data.cloud]);
         })
             .catch(function (error) {
