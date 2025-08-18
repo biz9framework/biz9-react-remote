@@ -1,7 +1,7 @@
 import axios  from 'axios';
 const get_data_adapter = (url) => {
     return new Promise((callback) => {
-        axios.get(url)
+        axios.get(url,{withCredentials:true})
             .then(function (response) {
                 callback([response.data.cloud_error,response.data.cloud]);
             })
@@ -10,11 +10,11 @@ const get_data_adapter = (url) => {
                 console.log(error);
                 callback([error.message,null]);
             });
-    })
+    });
 }
 const post_data_adapter = (url,obj) => {
     return new Promise((callback) => {
-        axios.post(url,{data:obj}).then(function (response) {
+        axios.post(url,{data:obj,withCredentials:true}).then(function (response) {
             callback([response.data.cloud_error,response.data.cloud]);
         })
             .catch(function (error) {
@@ -27,7 +27,7 @@ const post_data_adapter = (url,obj) => {
 }
 const delete_data_adapter = (url) => {
     return new Promise((callback) => {
-        axios.delete(url).then(function (response) {
+        axios.delete(url,withCredentials:true).then(function (response) {
             callback([response.data.cloud_error,response.data.cloud]);
         })
             .catch(function (error) {
