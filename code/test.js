@@ -41,7 +41,8 @@ test('connect', async () => {
         let item_test = Test.get_item(DATA_TYPE,ID);
         Log.w('cloud_url',cloud_url);
         Log.w('item_test',item_test);
-        let [error,data] = await Remote.get(cloud_url,item_test);
+        let [error,data] = await Remote.get(cloud_url);
+        //let [error,data] = await Remote.get(cloud_url,item_test);
         assert.notStrictEqual(data, null);
         Log.w('error',error);
         Log.w('data',data);
