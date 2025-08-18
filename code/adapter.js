@@ -12,7 +12,7 @@ const get_data_adapter = (url) => {
 const post_data_adapter = (url,obj) => {
     return new Promise((callback) => {
         axios.defaults.withCredentials = true;
-        axios.post(url,{method:'POST',withCredentials:true}).then(function (response) {
+        axios.post(url,{method:'POST',withCredentials:true,data:obj}).then(function (response) {
             callback([response.data.cloud_error,response.data.cloud]);
         }).catch(function (error) {
                 callback([error.message,null]);
