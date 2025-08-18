@@ -27,7 +27,7 @@ const post_data_adapter = (url,obj) => {
 }
 const delete_data_adapter = (url) => {
     return new Promise((callback) => {
-        axios.delete(url,withCredentials:true).then(function (response) {
+        axios.delete(url,{withCredentials:true}).then(function (response) {
             callback([response.data.cloud_error,response.data.cloud]);
         })
             .catch(function (error) {
