@@ -1,10 +1,11 @@
-alert('111');
+alert('222');
 import axios  from 'axios';
 //axios.defaults.withCredentials = true;
 // axios.get(url,{withCredentials:true})
+//axios.get(url)
 const get_data_adapter = (url) => {
     return new Promise((callback) => {
-       axios.get(url)
+    axios.get(url,{withCredentials:true})
             .then(function (response) {
                 console.log('get_1_start');
                 console.log('response')
