@@ -1,20 +1,9 @@
 import axios  from 'axios';
-//axios.defaults.withCredentials = true;
-//axios.get(url,{withCredentials:true})
-//axios.post(url,{data:obj},{withCredentials:true}).then(function (response) {
+axios.defaults.withCredentials = true;
 const get_data_adapter = (url) => {
     return new Promise((callback) => {
-        axios.get(url)
+        axios.get(url,{withCredentials:true})
             .then(function (response) {
-                console.log('i am here');
-                console.log('response');
-                console.log(response);
-                console.log('response-data');
-                console.log(response.data);
-                console.log(response.data.cloud_error);
-                console.log('bbbbbbbbbbb');
-                console.log(response.data.cloud_data);
-                console.log('cccccccccccccc');
                 callback([response.data.cloud_error,response.data.cloud]);
             })
             .catch(function (error) {
@@ -26,7 +15,7 @@ const get_data_adapter = (url) => {
 }
 const post_data_adapter = (url,obj) => {
     return new Promise((callback) => {
-        axios.post(url,{data:obj}).then(function (response) {
+        axios.post(url,{data:obj},{withCredentials:true}).then(function (response) {
             callback([response.data.cloud_error,response.data.cloud]);
         })
             .catch(function (error) {
