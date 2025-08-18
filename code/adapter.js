@@ -1,6 +1,6 @@
-alert('66666');
+alert('7777');
 import axios  from 'axios';
- axios.get(url,{withCredentials:true})
+// axios.get(url,{withCredentials:true})
 //axios.get(url)
 const get_data_adapter = (url) => {
     return new Promise((callback) => {
