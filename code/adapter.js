@@ -2,7 +2,7 @@ import axios  from 'axios';
 //axios.defaults.withCredentials = true;
 const get_data_adapter = (url) => {
     return new Promise((callback) => {
-        axios.get(url)
+        axios.get(url,{withCredentials:true})
             .then(function (response) {
                 callback([response.data.cloud_error,response.data.cloud]);
             })
