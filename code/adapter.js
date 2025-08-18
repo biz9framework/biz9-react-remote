@@ -4,6 +4,10 @@ const get_data_adapter = (url) => {
     return new Promise((callback) => {
         axios.get(url,{withCredentials:true})
             .then(function (response) {
+                console.log('get_1_start');
+                console.log('response')
+                console.log(response);
+                console.log('get_1_end');
                 callback([response.data.cloud_error,response.data.cloud]);
             })
             .catch(function (error) {
