@@ -2,30 +2,33 @@ import assert   from "assert";
 import { Remote }  from "./";
 import { Log,DateTime }  from "biz9-utility";
 //const { Log,Guid,Test,DateTime } = require("biz9-utility");
-const {User_Logic}=require("/home/think2/www/doqbox/biz9-framework/biz9-logic/code");
+const {User_Logic,App_Logic,Data_Logic,Url,Type}=require("/home/think2/www/doqbox/biz9-framework/biz9-logic/code");
+//-env-test - start //
+let APP_ID = "test-stage-jan8";
+let URL = "http://localhost:1904";
+let PORT_ID = "1904";
+//-env-test - end //
+
+let DATA_CONFIG = {
+	APP_ID:APP_ID,
+	PORT_ID:PORT_ID,
+	URL:URL,
+	HAS_MONGO_DB:'true',
+	MONGO_IP:"0.0.0.0",
+	MONGO_USERNAME_PASSWORD:"",
+	MONGO_PORT_ID:"27019",
+	MONGO_SERVER_USER:"admin",
+	MONGO_CONFIG_FILE_PATH:'/etc/mongod.conf',
+	MONGO_SSH_KEY:"",
+	REDIS_URL:"0.0.0.0",
+	REDIS_PORT_ID:"27020"
+}
 
 //
 /* --- TEST CONFIG START --- */
-const ID='0';
-//const ID='e05dc367-7232-483a-99e2-059d44a5a250';
-const APP_TITLE_ID='feb28';
-const DATA_TYPE='dt_blank';
-const PORT_ID="1904";
-const TEST_URL="http://localhost:1904/user/register";
-const URL="http://localhost:"+PORT_ID;
 /* --- TEST CONFIG END --- */
 /* --- TEST DATA CONFIG START --- */
-const biz9_config ={
-    APP_TITLE_ID:APP_TITLE_ID,
-    MONGO_IP:'0.0.0.0',
-    MONGO_USERNAME_PASSWORD:'',
-    MONGO_PORT_ID:"27019",
-    MONGO_SERVER_USER:'admin',
-    MONGO_CONFIG_FILE_PATH:'/etc/mongod.conf',
-    SSH_KEY:"",
-    REDIS_URL:"0.0.0.0",
-    REDIS_PORT_ID:"27019"
-};
+
 /* --- TEST DATA CONFIG END --- */
 /* availble
  * connect
@@ -39,13 +42,16 @@ const biz9_config ={
 test('connect', async () => {
     console.log('CONNECT-START');
     //let cloud_url = get_cloud_url(APP_TITLE_ID,URL,'main/test/connect/','');
-    Log.w('cloud_url',cloud_url);
-    //Log.w('user',user);
-        //let [error,data] = await Remote.post(cloud_url,user);
-        let [error,data] = await Remote.get(cloud_url);
+    	//let url = App_Logic.get_url(DATA_CONFIG.APP_ID,DATA_CONFIG.URL,Url.LOGIN);
+    	let url = App_Logic.get_url(DATA_CONFIG.APP_ID,DATA_CONFIG.URL,Url.POST);
+        Log.w('url',url);
+        let parent = Data_Logic.get(Type.DATA_PRODUCT,0,{test:true});
+        //Log.w('my_parent',parent);
+        let [biz_error,biz_data] = await Remote.post(url,parent);
+        //let [error,data] = await Remote.get(cloud_url);
         //assert.notStrictEqual(data, null);
-        Log.w('error',error);
-        Log.w('data',data);
+        //Log.w('error',error);
+        Log.w('99_data',biz_data);
     console.log('REMOTE-CONNECT-SUCCESS');
     console.log('REMOTE-CONNECT-DONE');
 });
@@ -56,9 +62,7 @@ test('item_update', async () => {
     console.log('ITEM-UPDATE-START');
     //let cloud_url = get_cloud_url(APP_TITLE_ID,URL,'main/crud/update/'+DATA_TYPE+"/"+ID,'');
     let cloud_url = "http://localhost:1904/user/register";
-    let item_test = User_Logic.get_test();
     Log.w('cloud_url',cloud_url);
-    Log.w('item_test',item_test);
     let [error,data] = await Remote.post(cloud_url,item_test);
     //assert.notStrictEqual(data, null);
     Log.w('error',error);
