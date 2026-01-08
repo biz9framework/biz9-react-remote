@@ -1,6 +1,6 @@
 {
   "name": "biz9-react-remote",
-  "version": "1.5.34",
+  "version": "1.5.35",
   "type": "module",
   "description": "**The BiZ9-React-Remote Package**",
   "main": "index.js",
@@ -12,8 +12,9 @@
   "dependencies": {
     "async": "^3.2.6",
     "axios": "^1.7.9",
-    "biz9-scriptz": "^5.8.1",
-    "biz9-utility": "^3.8.46"
+    "biz9-logic": "^10.0.47",
+    "biz9-scriptz": "^5.8.12",
+    "biz9-utility": "^4.4.12"
   },
   "keywords": [
     "React",
