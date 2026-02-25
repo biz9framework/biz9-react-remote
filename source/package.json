@@ -1,0 +1,37 @@
+{
+  "name": "biz9-react-remote",
+  "version": "1.5.2",
+  "type": "module",
+  "description": "**The BiZ9-React-Remote Package**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BiZ9 Framework LLC",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^3.2.6",
+    "axios": "^1.7.9",
+    "biz9-scriptz": "^5.8.25",
+    "biz9-utility": "^4.7.13"
+  },
+  "keywords": [
+    "React",
+    "React",
+    "Native",
+    "JavaScript",
+    "Async",
+    "Promise",
+    "Await",
+    "Fetch",
+    "JSON"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biz9framework/biz9-react-remote-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/biz9framework/biz9-react-remote-js/issues"
+  },
+  "homepage": "https://github.com/biz9framework/biz9-react-remote-js#readme"
+}
