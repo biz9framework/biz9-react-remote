@@ -12,8 +12,8 @@
   "dependencies": {
     "async": "^3.2.6",
     "axios": "^1.7.9",
-    "biz9-scriptz": "^5.5.13",
-    "biz9-utility": "^3.5.5"
+    "biz9-scriptz": "^5.8.25",
+    "biz9-utility": "^4.7.13"
   },
   "keywords": [
     "React",
