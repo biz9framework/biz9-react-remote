@@ -16,7 +16,7 @@ const get_data_adapter = (url) => {
 
 const post_data_adapter = (url,obj) => {
     return new Promise((callback) => {
-        axios.post(url,{data:obj}).then(function (response) {
+        axios.post(url,obj).then(function (response) {
             callback([response.data.cloud_error,response.data.cloud_data]);
         })
             .catch(function (error) {
