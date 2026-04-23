@@ -1,6 +1,6 @@
 {
   "name": "biz9-react-remote",
-  "version": "2.5.19",
+  "version": "2.5.20",
   "type": "module",
   "description": "**The BiZ9-React-Remote Package**",
   "main": "index.js",
