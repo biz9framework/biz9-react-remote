@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { get_data_adapter,post_data_adapter,delete_data_adapter }  from './adapter.js';
 import { Memory_Logic }  from './memory.js';
-const {Log,Str,Obj,Num}=require("biz9-utility");
+import {Obj,Str} from "biz9-utility";
 class Remote_Field {
     static APP_ID = 'app_id';
     static MINUTE = 'minute';
