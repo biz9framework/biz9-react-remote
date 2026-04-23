@@ -1,6 +1,6 @@
 {
   "name": "biz9-react-remote",
-  "version": "2.5.16",
+  "version": "2.5.17",
   "type": "module",
   "description": "**The BiZ9-React-Remote Package**",
   "main": "index.js",
@@ -13,7 +13,8 @@
     "async": "^3.2.6",
     "axios": "^1.7.9",
     "biz9-scriptz": "^5.8.30",
-    "biz9-utility": "^4.7.38"
+    "biz9-utility": "^4.7.61",
+    "dayjs": "^1.11.20"
   },
   "keywords": [
     "React",

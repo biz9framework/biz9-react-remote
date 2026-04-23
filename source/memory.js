@@ -1,0 +1,38 @@
+const {Log,Str,Obj,Num}=require("biz9-utility");
+class Memory_Logic {
+    static get = (window,key) => {
+        if(!Obj.check_is_empty(window)){
+            if(Str.check_is_null(window.localStorage.getItem(key))){
+                return null;
+            }else{
+                return JSON.parse(window.localStorage.getItem(key));
+            }
+        }else{
+            return null;
+        }
+    }
+    static post = (key,obj) => {
+        if(!Obj.check_is_empty(window)){
+            if(window.localStorage){
+                window.localStorage.setItem(key,JSON.stringify(obj));
+            }
+        }
+    }
+    static delete = (key) =>{
+        if(!Obj.check_is_empty(window)){
+            if(window.localStorage){
+                window.localStorage.removeItem(key);
+            }
+        }
+    }
+    static delete_all = (window) =>{
+        if(!Obj.check_is_empty(window)){
+            if(window.localStorage){
+                window.localStorage.clear();
+            }
+        }
+    }
+}
+export {
+    Memory_Logic
+}
