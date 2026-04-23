@@ -1,6 +1,6 @@
 import {Obj,Str} from "biz9-utility";
 class Memory_Logic {
-    static get = (window,key) => {
+    static get = (key) => {
         if(!Obj.check_is_empty(window)){
             if(Str.check_is_null(window.localStorage.getItem(key))){
                 return null;
@@ -25,7 +25,7 @@ class Memory_Logic {
             }
         }
     }
-    static delete_all = (window) =>{
+    static delete_all = () =>{
         if(!Obj.check_is_empty(window)){
             if(window.localStorage){
                 window.localStorage.clear();
