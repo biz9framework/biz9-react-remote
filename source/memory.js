@@ -1,4 +1,4 @@
-const {Log,Str,Obj,Num}=require("biz9-utility");
+import {Obj,Str} from "biz9-utility";
 class Memory_Logic {
     static get = (window,key) => {
         if(!Obj.check_is_empty(window)){
