@@ -1,0 +1,19 @@
+{
+  "name": "biz9-react-remote",
+  "version": "1.0.5",
+  "type": "module",
+  "description": "** Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.6",
+    "axios": "^1.15.2",
+    "biz9-scriptz": "^5.8.12",
+    "biz9-utility": "^4.4.28"
+  },
+  "devDependencies": {}
+}
