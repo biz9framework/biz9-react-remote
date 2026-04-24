@@ -36,7 +36,7 @@ class Remote_Logic {
         var app_id_url="?"+Remote_Field.APP_ID+"="+app_id;
         return host+"/"+url+app_id_url + param;
     };
-    static get_data = (app_id,host_name,action_url,form_data) =>{
+    static get_connect = (app_id,host_name,action_url,form_data) =>{
         return {
             app_id:app_id?app_id:null,
             host_name:host_name?host_name:null,
